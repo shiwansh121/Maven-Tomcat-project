@@ -12,7 +12,21 @@
             <configuration>                
                  <failOnMissingWebXml>false</failOnMissingWebXml>              
             </configuration>           
-         </plugin>        
+         </plugin>    
+       <!-- Use below maven tomcat plugin to deploy this maven project to tomcat server -->
+           <plugin>
+                 <groupId>org.apache.tomcat.maven</groupId>
+                 <artifactId>tomcat7-maven-plugin</artifactId>
+                 <version>2.2</version>
+                 <configuration>
+                   <url>http://localhost:8080/manager/text</url>
+                   <path>/DeployMavenToTomcat</path>
+                   <!-- Set update to ture to avoid exist war package can not be override error -->
+                   <update>true</update>
+                   <username>tomcat</username>
+                   <password>tomcat</password>
+                 </configuration>
+            </plugin>
     </plugins> 
 </build>
 </project>
