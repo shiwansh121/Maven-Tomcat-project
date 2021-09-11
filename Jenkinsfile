@@ -10,7 +10,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'master', url: 'https://github.com/AkashHadge/CI-usingAnsible.git'
+                git branch: 'master', url: 'https://github.com/AkashHadge/Maven-Tomcat-project'
              
           }
         }
@@ -46,7 +46,7 @@ pipeline {
                  
              
                
-               sh "ansible-playbook main.yml -i inventories/dev/hosts --user vagrant --key-file ~/.ssh/id_rsa"
+               sh "ansible-playbook main.yml -i inventories/dev/hosts --user Jenkins --key-file ~/.ssh/id_rsa"
 
                
             
